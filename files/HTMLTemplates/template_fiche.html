@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../HTMLTemplates/styles.css">
+    <title>Profil $nom_complet$ - GO Securi</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+<div id="header">
+    <h1>Profil de $nom_complet$</h1>
+</div>
+<button id="retour" onclick="window.location.href='index.html'">RETOUR</button>
+<main id="profil">
+    <div id="infos">
+        <p><strong>Prenom</strong> : $prenom$</p>
+        <p><strong>Nom</strong> : $nom$</p>
+        <p><strong>Fonction</strong> : $fonction$</p>
+
+        <h3>Materiel emprunté :</h3>
+
+        <ul>
+            $liste_materiel$
+        </ul>
+    </div>
+    <img id="carteidentite" src="../GOsecuri/$image$.png" alt="Images employé">
+</main>
+
+</body>
+
+</html>
