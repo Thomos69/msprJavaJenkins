@@ -105,9 +105,11 @@ public class Main {
 
     public static String readFile(String fileName) throws IOException {
 
-        File currentDirFile = new File("");
-        String currentDirPath = currentDirFile.getAbsolutePath();
-        String filesLocation = currentDirPath + "\\files\\GOsecuri\\";
+//        File currentDirFile = new File("");
+//        String currentDirPath = currentDirFile.getAbsolutePath();
+//        String filesLocation = currentDirPath + "\\files\\GOsecuri\\";
+
+        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
 
         fileName = filesLocation + fileName + ".txt";
 

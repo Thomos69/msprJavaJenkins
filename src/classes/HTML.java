@@ -11,9 +11,13 @@ import org.apache.commons.io.FileUtils;
 
 public class HTML {
 
-    private static File indexTemplateFile = new File(Main.getAbosulutePath("HTMLTemplates", "template_index.html"));
-    private static File ficheTemplateFile = new File(Main.getAbosulutePath("HTMLTemplates", "template_fiche.html"));
-    private static String HTMLOutPath = Main.getAbosulutePath("HTMLOut", "");
+//    private static File indexTemplateFile = new File(Main.getAbosulutePath("HTMLTemplates", "template_index.html"));
+//    private static File ficheTemplateFile = new File(Main.getAbosulutePath("HTMLTemplates", "template_fiche.html"));
+//    private static String HTMLOutPath = Main.getAbosulutePath("HTMLOut", "");
+
+    private static File indexTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_index.html");
+    private static File ficheTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_fiche.html");
+    private static String HTMLOutPath = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLOut\\";
 
     public static void GenerateHtpasswd() throws IOException {
         StringBuilder content = new StringBuilder();
