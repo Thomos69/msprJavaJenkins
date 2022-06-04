@@ -15,9 +15,13 @@ public class HTML {
 //    private static File ficheTemplateFile = new File(Main.getAbosulutePath("HTMLTemplates", "template_fiche.html"));
 //    private static String HTMLOutPath = Main.getAbosulutePath("HTMLOut", "");
 
-    private static File indexTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_index.html");
-    private static File ficheTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_fiche.html");
-    private static String HTMLOutPath = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLOut\\";
+//    private static File indexTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_index.html");
+//    private static File ficheTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_fiche.html");
+//    private static String HTMLOutPath = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLOut\\";
+
+    private static File indexTemplateFile = new File("/home/ubuntu-2004/GOsecuri/HTMLTemplates/template_index.html");
+    private static File ficheTemplateFile = new File("/home/ubuntu-2004/GOsecuri/HTMLTemplates/template_fiche.html");
+    private static String HTMLOutPath = "/var/www/html/";
 
     public static void GenerateHtpasswd() throws IOException {
         StringBuilder content = new StringBuilder();
@@ -32,7 +36,7 @@ public class HTML {
         StringBuilder listeEmployeHtml = new StringBuilder();
 
         for (Employe employe : Main.getListeEmploye()) {
-            listeEmployeHtml.append(String.format("<li><img class=\"preview\"src=\"../GOsecuri/%s.png\"><a href=\"%s.html\">%s</a></li>", employe.getPseudo(), employe.getPseudo(), employe.getNomComplet()));
+            listeEmployeHtml.append(String.format("<li><img class=\"preview\"src=\"/home/ubuntu-2004/GOsecuri/files/%s.png\"><a href=\"%s.html\">%s</a></li>", employe.getPseudo(), employe.getPseudo(), employe.getNomComplet()));
         }
 
         htmlContent = htmlContent.replace("$liste_employes$", listeEmployeHtml.toString());
@@ -54,7 +58,7 @@ public class HTML {
             htmlContent = htmlContent.replace("$image$", employe.getPseudo());
 
             for (Materiel materiel : employe.getMateriels()) {
-                listeMaterielHtml.append(String.format("<li>%s <img class=\"chehckbox\" src=\"../HTMLTemplates/checkbox.png\" alt=\"carteidentite\" height=\"30px\"></li>", materiel.getNomComplet()));
+                listeMaterielHtml.append(String.format("<li>%s <img class=\"chehckbox\" src=\"checkbox.png\" alt=\"carteidentite\" height=\"30px\"></li>", materiel.getNomComplet()));
             }
             htmlContent = htmlContent.replace("$liste_materiel$", listeMaterielHtml);
             String fileName = employe.getPseudo() + ".html";

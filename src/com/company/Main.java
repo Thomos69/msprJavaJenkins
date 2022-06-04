@@ -109,7 +109,8 @@ public class Main {
 //        String currentDirPath = currentDirFile.getAbsolutePath();
 //        String filesLocation = currentDirPath + "\\files\\GOsecuri\\";
 
-        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
+//        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
+        String filesLocation = "/home/ubuntu-2004/GOsecuri/files/";
 
         fileName = filesLocation + fileName + ".txt";
 
