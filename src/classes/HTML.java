@@ -2,6 +2,7 @@ package classes;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ public class HTML {
 //    private static String HTMLOutPath = Main.getAbosulutePath("HTMLOut", "");
 
 //    private static File indexTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_index.html");
+//    //    private static File indexTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_index.html");
 //    private static File ficheTemplateFile = new File("C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLTemplates\\template_fiche.html");
 //    private static String HTMLOutPath = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\HTMLOut\\";
 
@@ -24,7 +26,9 @@ public class HTML {
     private static String HTMLOutPath = "/var/www/html/";
 
     public static void GenerateHtpasswd() throws IOException {
+
         StringBuilder content = new StringBuilder();
+
         for (Employe employe : Main.getListeEmploye()) {
             content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getMotDePasse()));
         }
@@ -36,7 +40,7 @@ public class HTML {
         StringBuilder listeEmployeHtml = new StringBuilder();
 
         for (Employe employe : Main.getListeEmploye()) {
-            listeEmployeHtml.append(String.format("<li><img class=\"preview\"src=\"/home/ubuntu-2004/GOsecuri/files/%s.png\"><a href=\"%s.html\">%s</a></li>", employe.getPseudo(), employe.getPseudo(), employe.getNomComplet()));
+            listeEmployeHtml.append(String.format("<li><img class=\"preview\"src=\"img/%s.png\"><a href=\"%s.html\">%s</a></li>", employe.getPseudo(), employe.getPseudo(), employe.getNomComplet()));
         }
 
         htmlContent = htmlContent.replace("$liste_employes$", listeEmployeHtml.toString());
