@@ -1,14 +1,7 @@
 package classes;
 
-import classes.Materiel;
-
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
+import org.apache.commons.codec.digest.Md5Crypt;
 
 public class Employe {
 
@@ -29,7 +22,6 @@ public class Employe {
     }
 
 
-
     public String getPrenom() {
         return prenom;
     }
@@ -46,20 +38,9 @@ public class Employe {
         return motDePasse;
     }
 
-//    public String getHashedMotDePasse() throws NoSuchAlgorithmException {
-//
-//        MessageDigest md = MessageDigest.getInstance("SHA-1");
-//        byte[] messageDigest = md.digest(this.motDePasse.getBytes());
-//
-//
-//        BigInteger no = new BigInteger(1, messageDigest);
-//
-//        String hashtext = no.toString(16);
-//        while (hashtext.length() < 32) {
-//            hashtext = "0" + hashtext;
-//        }
-//        return hashtext;
-//    }
+    public String getHashedMotDePasse() {
+        return Md5Crypt.apr1Crypt(this.motDePasse.getBytes());
+    }
 
     public String getPseudo() {
         return pseudo;
