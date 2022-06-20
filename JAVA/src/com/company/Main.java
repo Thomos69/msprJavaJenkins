@@ -111,7 +111,7 @@ public class Main {
 
 //        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
 //        String filesLocation = "/home/ubuntu-2004/GOsecuri/files/";
-        String filesLocation = "/home/ubuntu-2004/GOSecuri/STATIC FILES/";
+        String filesLocation = "/home/ubuntu-2004/GOSecuri/STATIC_FILES/";
 
 
         fileName = filesLocation + fileName + ".txt";
