@@ -8,13 +8,14 @@ import classes.materiel.*;
 
 import java.io.*;
 import java.io.File;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 public class Main {
 
     private static List<Employe> listeEmploye = new ArrayList<Employe>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         getAllEmploye();
         HTML.GenerateAllFiles();
     }

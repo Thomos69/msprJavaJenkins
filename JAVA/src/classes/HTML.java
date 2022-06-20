@@ -3,6 +3,7 @@ package classes;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class HTML {
     private static File ficheTemplateFile = new File("/home/ubuntu-2004/GOSecuri/JAVA/files/HTMLTemplates/template_fiche.html");
     private static String HTMLOutPath = "/var/www/html/";
 
-    public static void GenerateHtpasswd() throws IOException {
+    public static void GenerateHtpasswd() throws IOException, NoSuchAlgorithmException {
 
         StringBuilder content = new StringBuilder();
         String htaccessContent = "AuthName \"Accès restreints - Veuillez vous authentifier\"\n" +
@@ -34,7 +35,7 @@ public class HTML {
                 "require valid-user";
 
         for (Employe employe : Main.getListeEmploye()) {
-            content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getMotDePasse()));
+            content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getHashedMotDePasse()));
         }
         writeHTMLFile(".htpasswd", content.toString());
         writeHTMLFile(".htaccess", htaccessContent);
@@ -80,7 +81,7 @@ public class HTML {
         FileUtils.writeStringToFile(newHtmlFile, content);
     }
 
-    public static void GenerateAllFiles() throws IOException {
+    public static void GenerateAllFiles() throws IOException, NoSuchAlgorithmException {
         HTML.GenerateHtpasswd();
         HTML.GenerateIndex();
         HTML.GenerateFiches();
