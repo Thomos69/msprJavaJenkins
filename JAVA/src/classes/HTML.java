@@ -28,6 +28,7 @@ public class HTML {
 
     public static void GenerateHtpasswd() throws IOException, NoSuchAlgorithmException {
 
+        ProcessBuilder processBuilder = new ProcessBuilder();
         StringBuilder content = new StringBuilder();
         String htaccessContent = "AuthName \"Accès restreints - Veuillez vous authentifier\"\n" +
                 "AuthType Basic\n" +
@@ -35,8 +36,10 @@ public class HTML {
                 "require valid-user";
 
         for (Employe employe : Main.getListeEmploye()) {
-            content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getHashedMotDePasse()));
+//            content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getMotDePasse()));
+            processBuilder.command("bash", "-c", String.format("htpasswd -bB /var/www/html/.htpasswd %s %s", employe.getPseudo(), employe.getMotDePasse()));
         }
+        
         writeHTMLFile(".htpasswd", content.toString());
         writeHTMLFile(".htaccess", htaccessContent);
     }
@@ -78,7 +81,7 @@ public class HTML {
 
     private static void writeHTMLFile(String fileName, String content) throws IOException {
         File newHtmlFile = new File(HTML.HTMLOutPath + fileName);
-        FileUtils.writeStringToFile(newHtmlFile, content);
+        FileUtils.writeStringToFile(newHtmlFile, content, "UTF-8");
     }
 
     public static void GenerateAllFiles() throws IOException, NoSuchAlgorithmException {
