@@ -30,7 +30,7 @@ public class HTML {
         StringBuilder content = new StringBuilder();
         String htaccessContent = "AuthName \"Accès restreints - Veuillez vous authentifier\"\n" +
                 "AuthType Basic\n" +
-                "AuthUserFile" + HTMLOutPath + ".htpasswd\n" +
+                "AuthUserFile " + HTMLOutPath + ".htpasswd\n" +
                 "require valid-user";
 
         for (Employe employe : Main.getListeEmploye()) {
