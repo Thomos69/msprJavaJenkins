@@ -38,8 +38,9 @@ public class HTML {
         for (Employe employe : Main.getListeEmploye()) {
 //            content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getMotDePasse()));
             processBuilder.command("bash", "-c", String.format("htpasswd -bB /var/www/html/.htpasswd %s %s", employe.getPseudo(), employe.getMotDePasse()));
+            Process process = processBuilder.start();
         }
-        
+
         writeHTMLFile(".htpasswd", content.toString());
         writeHTMLFile(".htaccess", htaccessContent);
     }
