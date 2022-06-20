@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MSPRJAVA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MSPRJAVA_jar</output-path>
+    <root id="archive" name="MSPRJAVA.jar">
+      <element id="module-output" name="MSPRJAVA" />
+      <element id="library" level="project" name="docs" />
+      <element id="library" level="project" name="FileUtils" />
+    </root>
+  </artifact>
+</component>

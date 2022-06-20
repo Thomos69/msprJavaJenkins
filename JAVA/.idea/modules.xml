@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/testMSPRR.iml" filepath="$PROJECT_DIR$/testMSPRR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MSPRJAVA.iml" filepath="$PROJECT_DIR$/MSPRJAVA.iml" />
     </modules>
   </component>
 </project>
