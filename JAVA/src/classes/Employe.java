@@ -2,6 +2,7 @@ package classes;
 
 import classes.Materiel;
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -44,9 +45,22 @@ public class Employe {
     }
 
     public String getHashedMotDePasse() throws NoSuchAlgorithmException {
+        // Static getInstance method is called with hashing MD5
         MessageDigest md = MessageDigest.getInstance("MD5");
-        byte[] result = md.digest(this.motDePasse.getBytes(StandardCharsets.UTF_8));
-        return Arrays.toString(result);
+
+        // digest() method is called to calculate message digest
+        //  of an input digest() return array of byte
+        byte[] messageDigest = md.digest(this.motDePasse.getBytes());
+
+        // Convert byte array into signum representation
+        BigInteger no = new BigInteger(1, messageDigest);
+
+        // Convert message digest into hex value
+        String hashtext = no.toString(16);
+        while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+        }
+        return hashtext;
     }
 
     public String getPseudo() {
