@@ -28,11 +28,16 @@ public class HTML {
     public static void GenerateHtpasswd() throws IOException {
 
         StringBuilder content = new StringBuilder();
+        String htaccess = "AuthName \"Accès restreints - Veuillez vous authentifier\"\n" +
+                "AuthType Basic\n" +
+                "AuthUserFile" + HTMLOutPath + ".htpasswd\n" +
+                "require valid-user";
 
         for (Employe employe : Main.getListeEmploye()) {
             content.append(String.format("%s:%s\n", employe.getPseudo(), employe.getMotDePasse()));
         }
         writeHTMLFile(".htpasswd", content.toString());
+        writeHTMLFile(".htaccess", content.toString());
     }
 
     public static void GenerateIndex() throws IOException {
