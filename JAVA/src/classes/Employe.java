@@ -46,7 +46,7 @@ public class Employe {
 
     public String getHashedMotDePasse() throws NoSuchAlgorithmException {
 
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        MessageDigest md = MessageDigest.getInstance("SHA-1");
         byte[] messageDigest = md.digest(this.motDePasse.getBytes());
 
         BigInteger no = new BigInteger(1, messageDigest);
