@@ -2,6 +2,10 @@ package classes;
 
 import classes.Materiel;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -37,6 +41,12 @@ public class Employe {
 
     public String getMotDePasse() {
         return motDePasse;
+    }
+
+    public String getHashedMotDePasse() throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] result = md.digest(this.motDePasse.getBytes(StandardCharsets.UTF_8));
+        return Arrays.toString(result);
     }
 
     public String getPseudo() {
