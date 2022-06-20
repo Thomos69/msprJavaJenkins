@@ -110,7 +110,9 @@ public class Main {
 //        String filesLocation = currentDirPath + "\\files\\GOsecuri\\";
 
 //        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
-        String filesLocation = "/home/ubuntu-2004/GOsecuri/files/";
+//        String filesLocation = "/home/ubuntu-2004/GOsecuri/files/";
+        String filesLocation = "/home/ubuntu-2004/GOsecuri/msprJavaJenkins/STATIC FILES/";
+
 
         fileName = filesLocation + fileName + ".txt";
 
