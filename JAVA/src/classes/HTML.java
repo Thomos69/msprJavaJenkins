@@ -61,9 +61,9 @@ public class HTML {
             htmlContent = htmlContent.replace("$fonction$", employe.getFonction());
             htmlContent = htmlContent.replace("$image$", employe.getPseudo());
 
-//            for (Materiel materiel : employe.getMateriels()) {
-//                listeMaterielHtml.append(String.format("<li>%s <img class=\"chehckbox\" src=\"checkbox.png\" alt=\"carteidentite\" height=\"30px\"></li>", materiel.getNomComplet()));
-//            }
+            for (Materiel materiel : employe.getMateriels()) {
+                listeMaterielHtml.append(String.format("<li>%s <img class=\"chehckbox\" src=\"checkbox.png\" alt=\"carteidentite\" height=\"30px\"></li>", materiel.getNomComplet()));
+            }
             htmlContent = htmlContent.replace("$liste_materiel$", listeMaterielHtml);
             String fileName = employe.getPseudo() + ".html";
             writeHTMLFile(fileName, htmlContent);
