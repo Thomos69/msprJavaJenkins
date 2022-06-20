@@ -4,6 +4,7 @@
     <root id="archive" name="MSPRJAVA.jar">
       <element id="module-output" name="MSPRJAVA" />
       <element id="library" level="project" name="docs" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/library/FileUtils/FileUtils.jar" path-in-jar="/" />
       <element id="library" level="project" name="FileUtils" />
     </root>
   </artifact>
