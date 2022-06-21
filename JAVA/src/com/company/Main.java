@@ -106,14 +106,7 @@ public class Main {
 
     public static String readFile(String fileName) throws IOException {
 
-//        File currentDirFile = new File("");
-//        String currentDirPath = currentDirFile.getAbsolutePath();
-//        String filesLocation = currentDirPath + "\\files\\GOsecuri\\";
-
-//        String filesLocation = "C:\\Users\\Thoma\\IdeaProjects\\MSPRR\\files\\GOsecuri\\";
-//        String filesLocation = "/home/ubuntu-2004/GOsecuri/files/";
         String filesLocation = "/home/ubuntu-2004/GOSecuri/STATIC_FILES/";
-
 
         fileName = filesLocation + fileName + ".txt";
 
@@ -136,5 +129,4 @@ public class Main {
     public static void print(String msg) {
         System.out.println(msg);
     }
-
 }
