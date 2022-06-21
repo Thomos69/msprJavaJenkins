@@ -6,6 +6,23 @@
     <title>Accueil - GO Securi</title>
 </head>
 
+<body>
+<div id="header">
+    <img src="img/gosecuri.png">
+    <h1>Bienvenue sur GOsecuri</h1>
+</div>
+
+<main id="listeagent">
+    <h3>Liste des agents :</h3>
+
+    <ul>
+        $liste_employes$
+    </ul>
+</main>
+
+</body>
+</html>
+
 <script>
     function orderAgents() {
         let agents = document.querySelectorAll("#listeagent ul li")
@@ -26,20 +43,3 @@
     }
 
 </script>
-
-<body>
-<div id="header">
-    <img src="img/gosecuri.png">
-    <h1>Bienvenue sur GOsecuri</h1>
-</div>
-
-<main id="listeagent">
-    <h3>Liste des agents :</h3>
-
-    <ul>
-        $liste_employes$
-    </ul>
-</main>
-
-</body>
-</html>
