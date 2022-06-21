@@ -6,9 +6,26 @@
     <title>Accueil - GO Securi</title>
 </head>
 
-<style>
+<script>
+    function orderAgents() {
+        let agents = document.querySelectorAll("#listeagent ul li")
+        let sortedAgent = Array.from(agents).sort((a, b) => a.innerText.localeCompare(b.innerText));
+        let newContent = ""
 
-</style>
+        document.querySelector("#listeagent ul").innerHTML = ""
+
+        for (agent of sortedAgent) {
+            newContent += `<li>${agent.innerHTML}</li>`
+        }
+
+        document.querySelector("#listeagent ul").innerHTML = newContent
+    }
+
+    window.document.onload = function(e){
+        orderAgents();
+    }
+
+</script>
 
 <body>
 <div id="header">
